@@ -5,12 +5,15 @@ import java.util.Locale;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in).useLocale(new Locale("pt", "BR"));
+        Scanner scanner = new Scanner(System.in).useLocale(Locale.forLanguageTag("pt-BR"));
 
         int totalPedidos = 0;
         double valorTotal = 0.0;
         double maiorCompra = 0.0;
         double menorCompra = Double.MAX_VALUE;
+        
+        // Variável do Desafio 1
+        int comprasAcima50 = 0;
 
         System.out.println("=== SISTEMA DE PEDIDOS ===");
 
@@ -43,6 +46,11 @@ public class Main {
                 menorCompra = valor;
             }
 
+            // Lógica do Desafio 1
+            if (valor > 50.0) {
+                comprasAcima50++;
+            }
+
             System.out.println("\nCadastrar novo pedido?");
             System.out.println("1 - Sim");
             System.out.println("2 - Não");
@@ -61,6 +69,9 @@ public class Main {
             System.out.printf("Ticket médio: R$ %.2f\n", ticketMedio);
             System.out.printf("Maior compra: R$ %.2f\n", maiorCompra);
             System.out.printf("Menor compra: R$ %.2f\n", menorCompra);
+            
+            // Exibição do Desafio 1
+            System.out.printf("Compras superiores a R$ 50,00: %d\n", comprasAcima50);
         } else {
             System.out.println("Nenhum pedido foi cadastrado no sistema.");
         }
