@@ -14,6 +14,9 @@ public class Main {
         
         // Variável do Desafio 1
         int comprasAcima50 = 0;
+        
+        // Variável do Desafio 2
+        String clienteMaiorCompra = "";
 
         System.out.println("=== SISTEMA DE PEDIDOS ===");
 
@@ -39,8 +42,10 @@ public class Main {
             totalPedidos++; 
             valorTotal += valor; 
 
+            // Atualizado para o Desafio 2
             if (valor > maiorCompra) {
                 maiorCompra = valor;
+                clienteMaiorCompra = nome; 
             }
             if (valor < menorCompra) {
                 menorCompra = valor;
@@ -72,6 +77,9 @@ public class Main {
             
             // Exibição do Desafio 1
             System.out.printf("Compras superiores a R$ 50,00: %d\n", comprasAcima50);
+            
+            // Exibição do Desafio 2
+            System.out.printf("Cliente da maior compra: %s\n", clienteMaiorCompra);
         } else {
             System.out.println("Nenhum pedido foi cadastrado no sistema.");
         }
