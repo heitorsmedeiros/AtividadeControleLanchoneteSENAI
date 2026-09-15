@@ -17,6 +17,10 @@ public class Main {
         
         // Variável do Desafio 2
         String clienteMaiorCompra = "";
+        
+        // Variáveis do Desafio 3
+        double somaAcima30 = 0.0;
+        int qtdAcima30 = 0;
 
         System.out.println("=== SISTEMA DE PEDIDOS ===");
 
@@ -42,7 +46,6 @@ public class Main {
             totalPedidos++; 
             valorTotal += valor; 
 
-            // Atualizado para o Desafio 2
             if (valor > maiorCompra) {
                 maiorCompra = valor;
                 clienteMaiorCompra = nome; 
@@ -54,6 +57,12 @@ public class Main {
             // Lógica do Desafio 1
             if (valor > 50.0) {
                 comprasAcima50++;
+            }
+            
+            // Lógica do Desafio 3
+            if (valor > 30.0) {
+                somaAcima30 += valor;
+                qtdAcima30++;
             }
 
             System.out.println("\nCadastrar novo pedido?");
@@ -80,6 +89,12 @@ public class Main {
             
             // Exibição do Desafio 2
             System.out.printf("Cliente da maior compra: %s\n", clienteMaiorCompra);
+            
+            // Exibição do Desafio 3
+            if (qtdAcima30 > 0) {
+                double mediaAcima30 = somaAcima30 / qtdAcima30;
+                System.out.printf("Média das compras acima de R$ 30,00: R$ %.2f\n", mediaAcima30);
+            }
         } else {
             System.out.println("Nenhum pedido foi cadastrado no sistema.");
         }
