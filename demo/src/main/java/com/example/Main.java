@@ -111,6 +111,12 @@ public class Main {
                         double mediaAcima30 = somaAcima30 / qtdAcima30;
                         System.out.printf("Média das compras acima de R$ 30,00: R$ %.2f\n", mediaAcima30);
                     }
+                    
+                    // Exibição do Desafio 5
+                    if (valorTotal > 500.0) {
+                        System.out.println("\nMeta atingida!");
+                    }
+                    
                 } else {
                     System.out.println("Nenhum pedido foi cadastrado no sistema.");
                 }
